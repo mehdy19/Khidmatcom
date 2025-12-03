@@ -156,11 +156,13 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.2);
     }
 
+    /* ----- قسم الخدمات الجديد ----- */
+
     .services {
       padding: 4rem 0;
       background: #f8f9fa;
     }
-
+    
     .section-title {
       text-align: center;
       font-size: 2.2rem;
@@ -168,45 +170,64 @@
       color: #2c3e50;
       margin-bottom: 3rem;
     }
-
+    
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
-      margin-top: 2rem;
     }
-
+    
+    /* تصميم البوكس */
     .service-card {
-      background: white;
-      padding: 2.5rem 2rem;
+      position: relative;
+      aspect-ratio: 16/9;
+      background-size: cover;
+      background-position: center;
       border-radius: 15px;
-      text-align: center;
-      transition: all 0.3s;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+      color: white;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
+    
+    /* تأثير Hover */
     .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.25);
     }
-
-    .service-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: #17a2b8;
+    
+    /* الطبقة الداكنة فوق الصورة */
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.15));
+      z-index: 0;
     }
-
+    
+    .service-card h3,
+    .service-card p {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+    }
+    
     .service-card h3 {
       font-size: 1.4rem;
-      font-weight: 700;
-      color: #17a2b8;
-      margin-bottom: 0.5rem;
+      font-weight: 800;
+      margin-bottom: 0.4rem;
+    }
+    
+    .service-card p {
+      font-size: 1rem;
+      opacity: 0.95;
     }
 
-    .service-card p {
-      color: #6c757d;
-      font-size: 0.95rem;
-    }
+
 
     .how-it-works {
       padding: 4rem 0;
@@ -491,48 +512,47 @@
 
   <!-- ================= SERVICES ================= -->
   <section id="services" class="services">
-    <div class="container">
-      <h2 class="section-title">خدماتنا المتميزة</h2>
+  <div class="container">
+    <h2 class="section-title">خدماتنا المتميزة</h2>
 
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">🔧</div>
-          <h3>خدمات السباكة</h3>
-          <p>تركيب و إصلاح و صيانة جميع أعمال السباكة مع تشخيص الأعطال بدقة و احترافية عالية</p>
-        </div>
+    <div class="services-grid">
 
-        <div class="service-card">
-          <div class="service-icon">⚡</div>
-          <h3>خدمات الكهرباء</h3>
-          <p>تمديدات كهربائية، إصلاح الأعطال، تركيب الدوائر والمصابيح واللوحات الكهربائية</p>
-        </div>
+  <div class="service-card" style="background-image: url('https://i.ibb.co/G3vCSY9y/plombie.png');">
+    <h3>خدمات السباكة</h3>
+    <p>تركيب، إصلاح وصيانة جميع أعمال السباكة باحترافية عالية</p>
+  </div>
 
-        <div class="service-card">
-          <div class="service-icon">🧹</div>
-          <h3>خدمات التنظيف</h3>
-          <p>تنظيف المنازل والمكاتب والمباني بشكل شامل وبأعلى معايير النظافة</p>
-        </div>
+  <div class="service-card" style="background-image: url('https://i.ibb.co/zhTHLHmT/ELECTRIC.png');">
+    <h3>خدمات الكهرباء</h3>
+    <p>تمديدات كهربائية، إصلاح الأعطال، تركيب اللوحات والمصابيح</p>
+  </div>
 
-        <div class="service-card">
-          <div class="service-icon">🏗️</div>
-          <h3>خدمات البناء</h3>
-          <p>أعمال الترميم و البناء و الدهان بأيدي خبراء محترفين</p>
-        </div>
+  <div class="service-card" style="background-image: url('https://i.ibb.co/dsGXYStL/clean.png');">
+    <h3>خدمات التنظيف</h3>
+    <p>تنظيف شامل للمنازل والمكاتب بجودة عالية</p>
+  </div>
 
-        <div class="service-card">
-          <div class="service-icon">🔨</div>
-          <h3>خدمات عامة</h3>
-          <p>تصليح الأجهزة، تركيب الأثاث، النجارة، وجميع الخدمات المنزلية الأخرى</p>
-        </div>
+  <div class="service-card" style="background-image: url('https://i.ibb.co/6R2bZF6n/building.png');">
+    <h3>خدمات البناء</h3>
+    <p>أعمال البناء والترميم والدهان بخبرة عالية</p>
+  </div>
 
-        <div class="service-card">
-          <div class="service-icon">🎨</div>
-          <h3>خدمات الديكور</h3>
-          <p>تصميم وتنفيذ الديكورات الداخلية والخارجية بلمسات عصرية وجذابة</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="service-card" style="background-image: url('https://i.ibb.co/356X8Jb1/general.png');">
+    <h3>الخدمات العامة</h3>
+    <p>تركيب الأثاث، النجارة، وتصليح الأجهزة</p>
+  </div>
+
+  <div class="service-card" style="background-image: url('https://i.ibb.co/2Y1XJK2x/decoration.png');">
+    <h3>خدمات الديكور</h3>
+    <p>تصميم وتنفيذ الديكورات الداخلية والخارجية</p>
+  </div>
+
+</div>
+
+  </div>
+</section>
+
+
 
   <!-- ================= HOW IT WORKS ================= -->
   <section id="how-it-works" class="how-it-works">
@@ -861,4 +881,3 @@
 
 </body>
 </html>
-
